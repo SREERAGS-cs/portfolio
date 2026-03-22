@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications | Sreerag - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#ffffff',
+                        lightNavy: '#f3f4f6',
+                        cyan: '#2563eb',
+                        slate: '#475569',
+                        lightSlate: '#334155',
+                        white: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-navy text-slate">
+    <!-- Navbar (Same as other pages) -->
+    <nav class="fixed w-full z-50 bg-navy/90 backdrop-blur-sm border-b border-lightNavy shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-bold text-cyan"></a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-lightSlate hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="about.html"
+                            class="text-lightSlate hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition">About</a>
+                        <a href="projects.html"
+                            class="text-lightSlate hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition">Projects</a>
+                        <a href="certifications.html"
+                            class="text-cyan px-3 py-2 rounded-md text-sm font-medium transition bg-lightNavy/50">Certifications</a>
+                        <a href="downloads.html"
+                            class="text-lightSlate hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition">Downloads</a>
+                        <a href="contact.html"
+                            class="border border-cyan text-cyan hover:bg-cyan/10 px-4 py-2 rounded text-sm font-medium transition">Contact
+                            Us</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-btn"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-cyan hover:bg-lightNavy focus:outline-none">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden bg-lightNavy border-b border-cyan/20" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="about.html"
+                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="projects.html"
+                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+                <a href="certifications.html"
+                    class="text-cyan block px-3 py-2 rounded-md text-base font-medium">Certifications</a>
+                <a href="downloads.html"
+                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Downloads</a>
+                <a href="contact.html"
+                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium border-t border-cyan/10 mt-2 pt-4">Contact
+                    Us</a>
+            </div>
+        </div>
+    </nav>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
+        <h1 class="text-4xl font-bold text-white mb-12 flex items-center fade-in">
+            <span class="text-cyan mr-4"></span> Certifications
+            <span class="h-px bg-lightNavy flex-grow ml-6"></span>
+        </h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Cert Card 1 -->
+            <div
+                class="bg-lightNavy p-6 rounded shadow-lg border border-transparent hover:border-cyan/30 transition transform hover:-translate-y-2 fade-in">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="text-cyan text-4xl">
+                        <i class="fas fa-certificate"></i> <!-- FontAwesome placeholder, using SVG instead -->
+                        <svg class="h-10 w-10 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <span class="text-xs font-mono text-slate border border-slate/20 px-2 py-1 rounded">2025</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-1">Advanced python course</h3>
+                <p class="text-sm text-cyan mb-4">Simplilearn</p>
+                <p class="text-slate text-sm mb-6">
+                    Gained hands-on experience in writing optimized Python code, implementing OOP principles, handling
+                    exceptions, and building database-driven applications.
+                </p>
+                <a href="assets/certificates/certificates-1.jpg" target="_blank"
+                    class="view-certificate inline-flex items-center text-sm font-bold text-white hover:text-cyan transition">
+                    View Certificate
+                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                </a>
+            </div>
+            <!-- Cert Card 2 -->
+            <div class="bg-lightNavy p-6 rounded shadow-lg border border-transparent hover:border-cyan/30 transition transform hover:-translate-y-2 fade-in"
+                style="transition-delay: 100ms;">
+                <div class="flex justify-between items-start mb-4">
+                    <svg class="h-10 w-10 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                    </svg>
+                    <span class="text-xs font-mono text-slate border border-slate/20 px-2 py-1 rounded">2024</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-1">Database and sql</h3>
+                <p class="text-sm text-cyan mb-4">Infosys Springboard</p>
+                <p class="text-slate text-sm mb-6">
+                    Studied core database concepts and SQL, including table creation, constraints, joins, subqueries,
+                    and aggregate functions, with hands-on query practice using relational databases.
+                </p>
+                <a href="assets/certificates/certificates-2.jpg" target="_blank"
+                    class="view-certificate inline-flex items-center text-sm font-bold text-white hover:text-cyan transition">
+                    View Certificate
+                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                </a>
+            </div>
+            <!-- Cert Card 3 -->
+            <div class="bg-lightNavy p-6 rounded shadow-lg border border-transparent hover:border-cyan/30 transition transform hover:-translate-y-2 fade-in"
+                style="transition-delay: 200ms;">
+                <div class="flex justify-between items-start mb-4">
+                    <svg class="h-10 w-10 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
+                        </path>
+                    </svg>
+                    <span class="text-xs font-mono text-slate border border-slate/20 px-2 py-1 rounded">2023</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-1">Introduction to java</h3>
+                <p class="text-sm text-cyan mb-4">Infosys Springboard</p>
+                <p class="text-slate text-sm mb-6">
+                    Learned the fundamentals of Java programming, including OOP concepts, control structures, exception
+                    handling, and basic data structures, with practical coding exercises.
+                </p>
+                <a href="assets/certificates/certificates-3.jpg" target="_blank"
+                    class="view-certificate inline-flex items-center text-sm font-bold text-white hover:text-cyan transition">
+                    View Certificate
+                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                </a>
+            </div>
+            <!--Cert card 4 -->
+            <div class="bg-lightNavy p-6 rounded shadow-lg border border-transparent hover:border-cyan/30 transition transform hover:-translate-y-2 fade-in"
+                style="transition-delay: 200ms;">
+                <div class="flex justify-between items-start mb-4">
+                    <svg class="h-10 w-10 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
+                        </path>
+                    </svg>
+                    <span class="text-xs font-mono text-slate border border-slate/20 px-2 py-1 rounded">2023</span>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-1">Python(basic)</h3>
+                <p class="text-sm text-cyan mb-4">Hackerrank</p>
+                <p class="text-slate text-sm mb-6">
+                    Proficient in Python fundamentals such as variables, loops, functions, conditional statements, and
+                    basic algorithmic problem-solving.
+                </p>
+                <a href="assets/certificates/certificates-4.jpg" target="_blank"
+                    class="view-certificate inline-flex items-center text-sm font-bold text-white hover:text-cyan transition">
+                    View Certificate
+                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </main>
+    <footer class="bg-lightNavy py-8 text-center border-t border-cyan/10 mt-auto">
+        <p class="text-sm font-mono text-slate">
+            &copy; 2026 Sreerag. All Rights Reserved.
+        </p>
+    </footer>
+    <!-- Image Modal -->
+    <div id="image-modal"
+        class="fixed inset-0 z-50 hidden bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <button id="modal-close" class="absolute top-4 right-4 text-white hover:text-cyan focus:outline-none">
+            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        <img id="modal-image" src="" alt="Certificate View"
+            class="max-h-[90vh] max-w-full rounded shadow-2xl transform scale-95 transition-transform duration-300">
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

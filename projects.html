@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Sreerag - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#ffffff',
+                        lightNavy: '#f3f4f6',
+                        cyan: '#2563eb',
+                        slate: '#475569',
+                        lightSlate: '#334155',
+                        white: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-navy text-slate">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-navy/90 backdrop-blur-sm border-b border-lightNavy shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="index.html" class="text-2xl font-bold text-cyan"></a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-lightSlate hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="about.html"
+                            class="text-lightSlate hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition">About</a>
+                        <a href="projects.html"
+                            class="text-cyan px-3 py-2 rounded-md text-sm font-medium transition bg-lightNavy/50">Projects</a>
+                        <a href="certifications.html"
+                            class="text-lightSlate hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition">Certifications</a>
+                        <a href="downloads.html"
+                            class="text-lightSlate hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition">Downloads</a>
+                        <a href="contact.html"
+                            class="border border-cyan text-cyan hover:bg-cyan/10 px-4 py-2 rounded text-sm font-medium transition">Contact
+                            Us</a>
+                    </div>
+                </div>
+                <!-- Hamburger -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-btn"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-cyan hover:bg-lightNavy focus:outline-none">
+                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-lightNavy border-b border-cyan/20" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="about.html"
+                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="projects.html" class="text-cyan block px-3 py-2 rounded-md text-base font-medium">Projects</a>
+                <a href="certifications.html"
+                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Certifications</a>
+                <a href="downloads.html"
+                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Downloads</a>
+                <a href="contact.html"
+                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium border-t border-cyan/10 mt-2 pt-4">Contact
+                    Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
+        <h1 class="text-4xl font-bold text-white mb-12 flex items-center fade-in">
+            <span class="text-cyan mr-4"></span> Projects
+            <span class="h-px bg-lightNavy flex-grow ml-6"></span>
+        </h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Project Card 1 -->
+            <div class="bg-lightNavy rounded-lg overflow-hidden portfolio-card fade-in h-full flex flex-col">
+                <div class="h-48 bg-navy flex items-center justify-center border-b border-cyan/10">
+                    <svg class="w-12 h-12 text-cyan opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <div class="flex justify-between items-center mb-4">
+                        <svg class="h-10 w-10 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                        </svg>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-lightSlate hover:text-cyan transition"><svg class="h-6 w-6"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg></a>
+                            <a href="#" class="text-lightSlate hover:text-cyan transition"><svg class="h-6 w-6"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg></a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan transition">Bond Book
+                    </h3>
+                    <p class="text-slate mb-4 text-sm flex-grow">
+                        Bond Book is a relationship management system designed to help users organize and manage
+                        personal or professional connections efficiently. The system allows structured storage of
+                        contact details and relationship information, enabling better tracking, accessibility, and
+                        relationship insights.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-cyan/80 mt-auto">
+                        <span>C </span>
+                        <span>File handling</span>
+                        <span>Structured programming</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="bg-lightNavy rounded-lg overflow-hidden portfolio-card fade-in h-full flex flex-col"
+                style="transition-delay: 100ms;">
+                <div class="h-48 bg-navy flex items-center justify-center border-b border-cyan/10">
+                    <svg class="w-12 h-12 text-cyan opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <div class="flex justify-between items-center mb-4">
+                        <svg class="h-10 w-10 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                        </svg>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-lightSlate hover:text-cyan transition"><svg class="h-6 w-6"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg></a>
+                            <a href="#" class="text-lightSlate hover:text-cyan transition"><svg class="h-6 w-6"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg></a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Students Report Card Management System</h3>
+                    <p class="text-slate mb-4 text-sm flex-grow">
+                        The Student Report Card Management System is designed to manage and organize student academic
+                        records efficiently. It enables structured storage and retrieval of student details,
+                        subject-wise marks, and overall performance, ensuring accuracy and easy access to report card
+                        information.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-cyan/80 mt-auto">
+                        <span>C++</span>
+                        <span>File handling </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="bg-lightNavy rounded-lg overflow-hidden portfolio-card fade-in h-full flex flex-col"
+                style="transition-delay: 200ms;">
+                <div class="h-48 bg-navy flex items-center justify-center border-b border-cyan/10">
+                    <svg class="w-12 h-12 text-cyan opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <div class="flex justify-between items-center mb-4">
+                        <svg class="h-10 w-10 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
+                        </svg>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-lightSlate hover:text-cyan transition"><svg class="h-6 w-6"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                </svg></a>
+                            <a href="#" class="text-lightSlate hover:text-cyan transition"><svg class="h-6 w-6"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg></a>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Vehicle Insurance System</h3>
+                    <p class="text-slate mb-4 text-sm flex-grow">
+                        The Vehicle Insurance System is designed to manage vehicle and insurance-related information in
+                        an organized manner. It supports efficient handling of policy details, vehicle records, and
+                        insurance status, ensuring accurate data management and easy retrieval.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-cyan/80 mt-auto">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>PHP</span>
+                        <span>MySQL</span>
+                        <span>Bootstrap</span></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-lightNavy py-8 text-center border-t border-cyan/10 mt-auto">
+        <p class="text-sm font-mono text-slate">
+            &copy; 2026 Sreerag. All Rights Reserved.
+        </p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
