@@ -11,52 +11,94 @@
             theme: {
                 extend: {
                     colors: {
-                        navy: '#ffffff',
-                        lightNavy: '#f3f4f6',
-                        cyan: '#2563eb',
-                        slate: '#475569',
-                        lightSlate: '#334155',
-                        white: '#1e293b',
+                        navy: '#0a0e17',
+                        lightNavy: '#111827',
+                        cardNavy: '#0f172a',
+                        cyan: '#3b82f6',
+                        slate: '#94a3b8',
+                        lightSlate: '#cbd5e1',
+                        white: '#f8fafc',
+                        greenGlow: '#22c55e',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
                     }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            background-color: #0a0e17;
+        }
+
+        .portfolio-card {
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            border: 1px solid rgba(59, 130, 246, 0.12);
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.25);
+        }
+
+        .tag-pill {
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            background: rgba(59, 130, 246, 0.06);
+        }
+
+        .level-pill {
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            background: rgba(34, 197, 94, 0.06);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .fade-in,
+            .portfolio-card {
+                transition: none !important;
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-navy text-slate">
-    <!-- Navbar (Same as other pages) -->
-    <nav class="fixed w-full z-50 bg-navy/90 backdrop-blur-sm border-b border-lightNavy shadow-lg">
+<body class="bg-navy text-slate font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-navy/90 backdrop-blur-sm border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0">
-                    <a href="index.html" class="text-2xl font-bold text-cyan"></a>
+                    <a href="index.html" class="text-2xl font-serif font-bold text-white">Sreerag<span
+                            class="text-cyan">.</span>S</a>
                 </div>
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
+                    <div class="ml-10 flex items-baseline space-x-2">
                         <a href="index.html"
-                            class="text-lightSlate hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                            class="text-lightSlate hover:text-cyan px-4 py-2 rounded-md text-sm font-medium transition">Home</a>
                         <a href="about.html"
-                            class="text-lightSlate hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition">About</a>
+                            class="text-lightSlate hover:text-cyan px-4 py-2 rounded-md text-sm font-medium transition">About</a>
                         <a href="projects.html"
-                            class="text-lightSlate hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition">Projects</a>
+                            class="text-lightSlate hover:text-cyan px-4 py-2 rounded-md text-sm font-medium transition">Projects</a>
                         <a href="certifications.html"
-                            class="text-cyan px-3 py-2 rounded-md text-sm font-medium transition bg-lightNavy/50">Certifications</a>
+                            class="text-cyan px-4 py-2 rounded-md text-sm font-medium transition bg-white/5">Certifications</a>
                         <a href="downloads.html"
-                            class="text-lightSlate hover:text-cyan px-3 py-2 rounded-md text-sm font-medium transition">Downloads</a>
+                            class="text-lightSlate hover:text-cyan px-4 py-2 rounded-md text-sm font-medium transition">Downloads</a>
                         <a href="contact.html"
-                            class="border border-cyan text-cyan hover:bg-cyan/10 px-4 py-2 rounded text-sm font-medium transition">Contact
-                            Us</a>
+                            class="border border-cyan/50 text-cyan hover:bg-cyan/10 ml-2 px-4 py-2 rounded text-sm font-medium transition">Contact</a>
                     </div>
                 </div>
+                <!-- Hamburger -->
                 <div class="-mr-2 flex md:hidden">
                     <button type="button" id="mobile-menu-btn"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-cyan hover:bg-lightNavy focus:outline-none">
+                        class="inline-flex items-center justify-center p-2 rounded-md text-cyan hover:bg-white/5 focus:outline-none">
                         <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
@@ -65,7 +107,8 @@
                 </div>
             </div>
         </div>
-        <div class="md:hidden hidden bg-lightNavy border-b border-cyan/20" id="mobile-menu">
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-lightNavy border-b border-cyan/10" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="index.html"
                     class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Home</a>
@@ -78,134 +121,190 @@
                 <a href="downloads.html"
                     class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Downloads</a>
                 <a href="contact.html"
-                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium border-t border-cyan/10 mt-2 pt-4">Contact
-                    Us</a>
+                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium border-t border-cyan/10 mt-2 pt-4">Contact</a>
             </div>
         </div>
     </nav>
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
-        <h1 class="text-4xl font-bold text-white mb-12 flex items-center fade-in">
-            <span class="text-cyan mr-4"></span> Certifications
-            <span class="h-px bg-lightNavy flex-grow ml-6"></span>
+
+    <!-- Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-24">
+
+        <div class="flex items-center mb-4">
+            <span class="h-px w-8 bg-cyan mr-3"></span>
+            <span class="font-mono text-xs tracking-[0.2em] text-cyan uppercase">What I've earned</span>
+        </div>
+        <h1 class="text-4xl md:text-5xl font-serif font-black text-white mb-4">
+            Certifications
         </h1>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <p class="text-slate max-w-2xl mb-12">
+            A running record of the courses and credentials I've completed — each one tied to real code I've
+            since written.
+        </p>
+
+        <!-- Stat strip -->
+        <div class="grid grid-cols-3 divide-x divide-white/5 border-y border-white/5 mb-16 font-mono fade-in">
+            <div class="py-5 pr-4">
+                <div class="text-3xl font-serif font-bold text-white">04</div>
+                <div class="text-xs uppercase tracking-wider text-slate mt-1">Certifications</div>
+            </div>
+            <div class="py-5 px-4">
+                <div class="text-3xl font-serif font-bold text-white">03</div>
+                <div class="text-xs uppercase tracking-wider text-slate mt-1">Issuing platforms</div>
+            </div>
+            <div class="py-5 pl-4">
+                <div class="text-3xl font-serif font-bold text-white">2025</div>
+                <div class="text-xs uppercase tracking-wider text-slate mt-1">Most recent</div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
             <!-- Cert Card 1 -->
-            <div
-                class="bg-lightNavy p-6 rounded shadow-lg border border-transparent hover:border-cyan/30 transition transform hover:-translate-y-2 fade-in">
-                <div class="flex justify-between items-start mb-4">
-                    <div class="text-cyan text-4xl">
-                        <i class="fas fa-certificate"></i> <!-- FontAwesome placeholder, using SVG instead -->
-                        <svg class="h-10 w-10 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
+            <div class="bg-cardNavy rounded-xl overflow-hidden portfolio-card fade-in h-full flex flex-col">
+                <div class="h-32 bg-lightNavy border-b border-cyan/10 flex items-center justify-center">
+                    <svg class="h-10 w-10 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                            d="M9.75 9.75c0-1.1.9-2 2-2h1.5v-1a2 2 0 012-2h.5a2 2 0 012 2v3a2 2 0 01-2 2h-3.5m0 0v3a2 2 0 002 2h.5m-6 0a2 2 0 01-2-2v-3h3.5m0-3h-.5a2 2 0 00-2 2v1">
+                        </path>
+                    </svg>
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="font-mono text-xs text-slate">01</span>
+                        <span class="tag-pill px-2.5 py-1 rounded text-xs font-mono text-cyan">2025</span>
                     </div>
-                    <span class="text-xs font-mono text-slate border border-slate/20 px-2 py-1 rounded">2025</span>
+                    <h3 class="text-xl font-serif font-bold text-white mb-1">Advanced Python Course</h3>
+                    <p class="text-cyan text-sm mb-2">Simplilearn</p>
+                    <span
+                        class="level-pill inline-block w-fit px-2 py-0.5 rounded text-[11px] font-mono uppercase tracking-wider text-greenGlow mb-4">Advanced</span>
+                    <p class="text-slate mb-5 text-sm leading-relaxed flex-grow">
+                        Hands-on with optimized Python, OOP principles, exception handling, and building
+                        database-driven applications.
+                    </p>
+                    <a href="certificates-1.jpg" target="_blank"
+                        class="view-certificate mt-auto pt-4 border-t border-cyan/10 inline-flex items-center text-sm font-medium text-white hover:text-cyan transition">
+                        View Certificate
+                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-1">Advanced python course</h3>
-                <p class="text-sm text-cyan mb-4">Simplilearn</p>
-                <p class="text-slate text-sm mb-6">
-                    Gained hands-on experience in writing optimized Python code, implementing OOP principles, handling
-                    exceptions, and building database-driven applications.
-                </p>
-                <a href="assets/certificates/certificates-1.jpg" target="_blank"
-                    class="view-certificate inline-flex items-center text-sm font-bold text-white hover:text-cyan transition">
-                    View Certificate
-                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                    </svg>
-                </a>
             </div>
+
             <!-- Cert Card 2 -->
-            <div class="bg-lightNavy p-6 rounded shadow-lg border border-transparent hover:border-cyan/30 transition transform hover:-translate-y-2 fade-in"
-                style="transition-delay: 100ms;">
-                <div class="flex justify-between items-start mb-4">
+            <div class="bg-cardNavy rounded-xl overflow-hidden portfolio-card fade-in h-full flex flex-col">
+                <div class="h-32 bg-lightNavy border-b border-cyan/10 flex items-center justify-center">
                     <svg class="h-10 w-10 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4">
+                        </path>
                     </svg>
-                    <span class="text-xs font-mono text-slate border border-slate/20 px-2 py-1 rounded">2024</span>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-1">Database and sql</h3>
-                <p class="text-sm text-cyan mb-4">Infosys Springboard</p>
-                <p class="text-slate text-sm mb-6">
-                    Studied core database concepts and SQL, including table creation, constraints, joins, subqueries,
-                    and aggregate functions, with hands-on query practice using relational databases.
-                </p>
-                <a href="assets/certificates/certificates-2.jpg" target="_blank"
-                    class="view-certificate inline-flex items-center text-sm font-bold text-white hover:text-cyan transition">
-                    View Certificate
-                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                    </svg>
-                </a>
+                <div class="p-6 flex-grow flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="font-mono text-xs text-slate">02</span>
+                        <span class="tag-pill px-2.5 py-1 rounded text-xs font-mono text-cyan">2024</span>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-white mb-1">Database and SQL</h3>
+                    <p class="text-cyan text-sm mb-2">Infosys Springboard</p>
+                    <span
+                        class="level-pill inline-block w-fit px-2 py-0.5 rounded text-[11px] font-mono uppercase tracking-wider text-greenGlow mb-4">Intermediate</span>
+                    <p class="text-slate mb-5 text-sm leading-relaxed flex-grow">
+                        Core database concepts and SQL — table design, constraints, joins, subqueries, and
+                        aggregate functions with hands-on queries.
+                    </p>
+                    <a href="certificates-2.jpg" target="_blank"
+                        class="view-certificate mt-auto pt-4 border-t border-cyan/10 inline-flex items-center text-sm font-medium text-white hover:text-cyan transition">
+                        View Certificate
+                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                </div>
             </div>
+
             <!-- Cert Card 3 -->
-            <div class="bg-lightNavy p-6 rounded shadow-lg border border-transparent hover:border-cyan/30 transition transform hover:-translate-y-2 fade-in"
-                style="transition-delay: 200ms;">
-                <div class="flex justify-between items-start mb-4">
+            <div class="bg-cardNavy rounded-xl overflow-hidden portfolio-card fade-in h-full flex flex-col">
+                <div class="h-32 bg-lightNavy border-b border-cyan/10 flex items-center justify-center">
                     <svg class="h-10 w-10 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                            d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3">
                         </path>
                     </svg>
-                    <span class="text-xs font-mono text-slate border border-slate/20 px-2 py-1 rounded">2023</span>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-1">Introduction to java</h3>
-                <p class="text-sm text-cyan mb-4">Infosys Springboard</p>
-                <p class="text-slate text-sm mb-6">
-                    Learned the fundamentals of Java programming, including OOP concepts, control structures, exception
-                    handling, and basic data structures, with practical coding exercises.
-                </p>
-                <a href="assets/certificates/certificates-3.jpg" target="_blank"
-                    class="view-certificate inline-flex items-center text-sm font-bold text-white hover:text-cyan transition">
-                    View Certificate
-                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                    </svg>
-                </a>
+                <div class="p-6 flex-grow flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="font-mono text-xs text-slate">03</span>
+                        <span class="tag-pill px-2.5 py-1 rounded text-xs font-mono text-cyan">2023</span>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-white mb-1">Introduction to Java</h3>
+                    <p class="text-cyan text-sm mb-2">Infosys Springboard</p>
+                    <span
+                        class="level-pill inline-block w-fit px-2 py-0.5 rounded text-[11px] font-mono uppercase tracking-wider text-greenGlow mb-4">Beginner</span>
+                    <p class="text-slate mb-5 text-sm leading-relaxed flex-grow">
+                        Java fundamentals — OOP concepts, control structures, exception handling, and basic
+                        data structures with practical exercises.
+                    </p>
+                    <a href="certificates-3.jpg" target="_blank"
+                        class="view-certificate mt-auto pt-4 border-t border-cyan/10 inline-flex items-center text-sm font-medium text-white hover:text-cyan transition">
+                        View Certificate
+                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                </div>
             </div>
-            <!--Cert card 4 -->
-            <div class="bg-lightNavy p-6 rounded shadow-lg border border-transparent hover:border-cyan/30 transition transform hover:-translate-y-2 fade-in"
-                style="transition-delay: 200ms;">
-                <div class="flex justify-between items-start mb-4">
+
+            <!-- Cert Card 4 -->
+            <div class="bg-cardNavy rounded-xl overflow-hidden portfolio-card fade-in h-full flex flex-col">
+                <div class="h-32 bg-lightNavy border-b border-cyan/10 flex items-center justify-center">
                     <svg class="h-10 w-10 text-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"
+                            d="M9.75 9.75c0-1.1.9-2 2-2h1.5v-1a2 2 0 012-2h.5a2 2 0 012 2v3a2 2 0 01-2 2h-3.5m0 0v3a2 2 0 002 2h.5m-6 0a2 2 0 01-2-2v-3h3.5m0-3h-.5a2 2 0 00-2 2v1">
                         </path>
                     </svg>
-                    <span class="text-xs font-mono text-slate border border-slate/20 px-2 py-1 rounded">2023</span>
                 </div>
-                <h3 class="text-xl font-bold text-white mb-1">Python(basic)</h3>
-                <p class="text-sm text-cyan mb-4">Hackerrank</p>
-                <p class="text-slate text-sm mb-6">
-                    Proficient in Python fundamentals such as variables, loops, functions, conditional statements, and
-                    basic algorithmic problem-solving.
-                </p>
-                <a href="assets/certificates/certificates-4.jpg" target="_blank"
-                    class="view-certificate inline-flex items-center text-sm font-bold text-white hover:text-cyan transition">
-                    View Certificate
-                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                    </svg>
-                </a>
+                <div class="p-6 flex-grow flex flex-col">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="font-mono text-xs text-slate">04</span>
+                        <span class="tag-pill px-2.5 py-1 rounded text-xs font-mono text-cyan">2023</span>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-white mb-1">Python (Basic)</h3>
+                    <p class="text-cyan text-sm mb-2">HackerRank</p>
+                    <span
+                        class="level-pill inline-block w-fit px-2 py-0.5 rounded text-[11px] font-mono uppercase tracking-wider text-greenGlow mb-4">Beginner</span>
+                    <p class="text-slate mb-5 text-sm leading-relaxed flex-grow">
+                        Python fundamentals — variables, loops, functions, conditional statements, and basic
+                        algorithmic problem-solving.
+                    </p>
+                    <a href="certificates-4.jpg" target="_blank"
+                        class="view-certificate mt-auto pt-4 border-t border-cyan/10 inline-flex items-center text-sm font-medium text-white hover:text-cyan transition">
+                        View Certificate
+                        <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                </div>
             </div>
 
         </div>
     </main>
-    <footer class="bg-lightNavy py-8 text-center border-t border-cyan/10 mt-auto">
+
+    <footer class="bg-lightNavy py-8 text-center border-t border-cyan/10">
         <p class="text-sm font-mono text-slate">
             &copy; 2026 Sreerag. All Rights Reserved.
         </p>
     </footer>
+
     <!-- Image Modal -->
     <div id="image-modal"
         class="fixed inset-0 z-50 hidden bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm opacity-0 transition-opacity duration-300">
-        <button id="modal-close" class="absolute top-4 right-4 text-white hover:text-cyan focus:outline-none">
+        <button id="modal-close" aria-label="Close certificate view"
+            class="absolute top-4 right-4 text-white hover:text-cyan focus:outline-none focus:ring-2 focus:ring-cyan rounded">
             <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
@@ -215,6 +314,53 @@
     </div>
 
     <script src="assets/js/main.js"></script>
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        }
+
+        // Certificate modal
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-image');
+        const modalClose = document.getElementById('modal-close');
+
+        document.querySelectorAll('.view-certificate').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                modalImg.src = link.getAttribute('href');
+                modal.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    modal.classList.remove('opacity-0');
+                    modalImg.classList.remove('scale-95');
+                });
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeModal() {
+            modal.classList.add('opacity-0');
+            modalImg.classList.add('scale-95');
+            document.body.style.overflow = '';
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        }
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+        // Fade-in on load
+        document.querySelectorAll('.fade-in').forEach((el, i) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(12px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            setTimeout(() => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }, 80 * i);
+        });
+    </script>
 </body>
 
 </html>
