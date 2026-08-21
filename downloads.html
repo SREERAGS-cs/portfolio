@@ -32,7 +32,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             background-color: #0a0e17;
@@ -228,24 +228,7 @@
         </p>
     </footer>
 
-    <script src="assets/js/main.js"></script>
-    <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (menuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        }
-
-        document.querySelectorAll('.fade-in').forEach((el, i) => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(12px)';
-            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            setTimeout(() => {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-            }, 80 * i);
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>

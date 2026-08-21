@@ -32,7 +32,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
             background-color: #0a0e17;
@@ -311,56 +311,10 @@
         </button>
         <img id="modal-image" src="" alt="Certificate View"
             class="max-h-[90vh] max-w-full rounded shadow-2xl transform scale-95 transition-transform duration-300">
+        <p id="modal-error" role="alert" class="hidden absolute bottom-8 left-0 right-0 text-center font-mono text-sm text-red-500"></p>
     </div>
 
-    <script src="assets/js/main.js"></script>
-    <script>
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (menuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        }
-
-        // Certificate modal
-        const modal = document.getElementById('image-modal');
-        const modalImg = document.getElementById('modal-image');
-        const modalClose = document.getElementById('modal-close');
-
-        document.querySelectorAll('.view-certificate').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                modalImg.src = link.getAttribute('href');
-                modal.classList.remove('hidden');
-                requestAnimationFrame(() => {
-                    modal.classList.remove('opacity-0');
-                    modalImg.classList.remove('scale-95');
-                });
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        function closeModal() {
-            modal.classList.add('opacity-0');
-            modalImg.classList.add('scale-95');
-            document.body.style.overflow = '';
-            setTimeout(() => modal.classList.add('hidden'), 300);
-        }
-        modalClose.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-
-        // Fade-in on load
-        document.querySelectorAll('.fade-in').forEach((el, i) => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(12px)';
-            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            setTimeout(() => {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-            }, 80 * i);
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>
