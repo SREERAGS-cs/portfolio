@@ -646,7 +646,11 @@
     // Mobile menu
     const btn = document.getElementById('hamburger');
     const menu = document.getElementById('mobile-menu');
-    btn.addEventListener('click', () => menu.classList.toggle('open'));
+    if (btn && menu) {
+      btn.addEventListener('click', () => menu.classList.toggle('open'));
+    } else {
+      console.error('Mobile navigation markup is missing (#hamburger or #mobile-menu); the menu toggle is disabled.');
+    }
   </script>
 </body>
 

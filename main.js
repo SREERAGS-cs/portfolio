@@ -1,4 +1,4 @@
-/ Main JavaScript for Portfolio Website
+// Main JavaScript for Portfolio Website
 
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Navigation Toggle
@@ -36,13 +36,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.getElementById('modal-close');
     const certLinks = document.querySelectorAll('.view-certificate');
 
+    if (certLinks.length && !(modal && modalImg && closeBtn)) {
+        console.error('Certificate modal markup is incomplete (#image-modal, #modal-image or #modal-close missing); falling back to opening certificates directly.');
+    }
+
     if (modal && modalImg && closeBtn) {
+        const modalError = document.getElementById('modal-error');
+
+        modalImg.addEventListener('error', () => {
+            const failed = modalImg.getAttribute('src');
+            if (!failed) return;
+            console.error(`Failed to load certificate image: ${failed}`);
+            if (modalError) {
+                modalError.textContent = 'This certificate image could not be loaded.';
+                modalError.classList.remove('hidden');
+            }
+        });
+
         // Open Modal
         certLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href');
                 if (href && (href.endsWith('.jpg') || href.endsWith('.jpeg') || href.endsWith('.png') || href.endsWith('.webp'))) {
                     e.preventDefault();
+                    if (modalError) {
+                        modalError.textContent = '';
+                        modalError.classList.add('hidden');
+                    }
                     modalImg.src = href;
                     modal.classList.remove('hidden');
                     // Small delay to allow display:flex to apply before opacity transition
@@ -87,31 +107,63 @@ document.addEventListener('DOMContentLoaded', () => {
     // Form Validation (Only on contact page)
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+        const formMessage = document.getElementById('form-message');
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
 
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            const formMessage = document.getElementById('form-message');
+        if (!nameInput || !emailInput || !messageInput || !formMessage) {
+            console.error('Contact form is missing required elements (#name, #email, #message or #form-message); submit handling is disabled.');
+        } else {
+            contactForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
 
-            if (!name || !email || !message) {
-                showFeedback(formMessage, 'Please fill in all fields.', 'text-red-500');
-                return;
-            }
+                const name = nameInput.value.trim();
+                const email = emailInput.value.trim();
+                const message = messageInput.value.trim();
 
-            if (!isValidEmail(email)) {
-                showFeedback(formMessage, 'Please enter a valid email address.', 'text-red-500');
-                return;
-            }
+                if (!name || !email || !message) {
+                    showFeedback(formMessage, 'Please fill in all fields.', 'text-red-500');
+                    return;
+                }
 
-            // Simulate form submission
-            showFeedback(formMessage, 'Sending...', 'text-cyan');
-            setTimeout(() => {
-                showFeedback(formMessage, 'Message sent successfully!', 'text-green-500');
-                contactForm.reset();
-            }, 1500);
-        });
+                if (!isValidEmail(email)) {
+                    showFeedback(formMessage, 'Please enter a valid email address.', 'text-red-500');
+                    return;
+                }
+
+                const endpoint = contactForm.dataset.endpoint || contactForm.getAttribute('action');
+                if (!endpoint) {
+                    console.error('Contact form has no data-endpoint or action attribute; the message was not sent.');
+                    showFeedback(formMessage, 'Sorry, this form is not connected to a mail service yet. Please reach out over one of the links below.', 'text-red-500');
+                    return;
+                }
+
+                showFeedback(formMessage, 'Sending...', 'text-cyan');
+                if (submitBtn) submitBtn.disabled = true;
+
+                try {
+                    const response = await fetch(endpoint, {
+                        method: 'POST',
+                        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name, email, message })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Contact endpoint responded with ${response.status} ${response.statusText}`);
+                    }
+
+                    showFeedback(formMessage, 'Message sent successfully!', 'text-green-500');
+                    contactForm.reset();
+                } catch (error) {
+                    console.error('Failed to send contact message:', error);
+                    showFeedback(formMessage, 'Your message could not be sent. Please try again or email me directly.', 'text-red-500');
+                } finally {
+                    if (submitBtn) submitBtn.disabled = false;
+                }
+            });
+        }
     }
 
     function showFeedback(element, text, colorClass) {

@@ -760,7 +760,11 @@
   <script>
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
-    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    } else {
+      console.error('Mobile navigation markup is missing (#hamburger or #mobile-menu); the menu toggle is disabled.');
+    }
 
     // Hide scroll hint on scroll
     window.addEventListener('scroll', () => {
