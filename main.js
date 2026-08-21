@@ -1,4 +1,8 @@
-/ Main JavaScript for Portfolio Website
+// Main JavaScript for Portfolio Website
+
+const MAX_NAME_LENGTH = 100;
+const MAX_EMAIL_LENGTH = 254;
+const MAX_MESSAGE_LENGTH = 2000;
 
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Navigation Toggle
@@ -41,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         certLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 const href = link.getAttribute('href');
-                if (href && (href.endsWith('.jpg') || href.endsWith('.jpeg') || href.endsWith('.png') || href.endsWith('.webp'))) {
+                if (href && isSafeImagePath(href)) {
                     e.preventDefault();
                     modalImg.src = href;
                     modal.classList.remove('hidden');
@@ -100,6 +104,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            if (name.length > MAX_NAME_LENGTH || email.length > MAX_EMAIL_LENGTH || message.length > MAX_MESSAGE_LENGTH) {
+                showFeedback(formMessage, 'One of the fields is too long.', 'text-red-500');
+                return;
+            }
+
             if (!isValidEmail(email)) {
                 showFeedback(formMessage, 'Please enter a valid email address.', 'text-red-500');
                 return;
@@ -122,5 +131,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function isValidEmail(email) {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
+    }
+
+    function isSafeImagePath(path) {
+        return /^[\w./-]+\.(jpg|jpeg|png|webp)$/i.test(path) && !path.includes('..');
     }
 });
