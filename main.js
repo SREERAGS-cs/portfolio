@@ -1,61 +1,60 @@
-/ Main JavaScript for Portfolio Website
+// Main JavaScript for Portfolio Website
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Navigation Toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
+(function (root) {
+    const IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp'];
 
-    if (mobileMenuBtn && mobileMenu) {
+    function isImageHref(href) {
+        if (typeof href !== 'string') return false;
+        const path = href.split('?')[0].split('#')[0].toLowerCase();
+        return IMAGE_EXTENSIONS.some(ext => path.endsWith(ext));
+    }
+
+    function isValidEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
+    function showFeedback(element, text, colorClass) {
+        if (!element) return;
+        element.textContent = text;
+        element.className = 'mt-4 text-center ' + colorClass;
+    }
+
+    function initMobileMenu(doc) {
+        const mobileMenuBtn = doc.getElementById('mobile-menu-btn');
+        const mobileMenu = doc.getElementById('mobile-menu');
+
+        if (!mobileMenuBtn || !mobileMenu) return false;
+
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+        return true;
     }
 
-    // Scroll Animations (Intersection Observer)
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+    function initScrollAnimations(doc, win) {
+        if (typeof win.IntersectionObserver !== 'function') return null;
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Only animate once
-            }
-        });
-    }, observerOptions);
-
-    const fadeElements = document.querySelectorAll('.fade-in');
-    fadeElements.forEach(el => observer.observe(el));
-
-    // Certificate Modal Logic
-    const modal = document.getElementById('image-modal');
-    const modalImg = document.getElementById('modal-image');
-    const closeBtn = document.getElementById('modal-close');
-    const certLinks = document.querySelectorAll('.view-certificate');
-
-    if (modal && modalImg && closeBtn) {
-        // Open Modal
-        certLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                const href = link.getAttribute('href');
-                if (href && (href.endsWith('.jpg') || href.endsWith('.jpeg') || href.endsWith('.png') || href.endsWith('.webp'))) {
-                    e.preventDefault();
-                    modalImg.src = href;
-                    modal.classList.remove('hidden');
-                    // Small delay to allow display:flex to apply before opacity transition
-                    setTimeout(() => {
-                        modal.classList.remove('opacity-0');
-                        modalImg.classList.remove('scale-95');
-                        modalImg.classList.add('scale-100');
-                    }, 10);
+        const observer = new win.IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    obs.unobserve(entry.target); // Only animate once
                 }
             });
-        });
+        }, { root: null, rootMargin: '0px', threshold: 0.1 });
 
-        // Close Modal Function
+        doc.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        return observer;
+    }
+
+    function initCertificateModal(doc) {
+        const modal = doc.getElementById('image-modal');
+        const modalImg = doc.getElementById('modal-image');
+        const closeBtn = doc.getElementById('modal-close');
+
+        if (!modal || !modalImg || !closeBtn) return false;
+
         const closeModal = () => {
             modal.classList.add('opacity-0');
             modalImg.classList.remove('scale-100');
@@ -66,34 +65,50 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 300); // Wait for transition
         };
 
-        // Close on Button Click
+        doc.querySelectorAll('.view-certificate').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (!isImageHref(href)) return;
+                e.preventDefault();
+                modalImg.src = href;
+                modal.classList.remove('hidden');
+                // Small delay to allow display:flex to apply before opacity transition
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modalImg.classList.remove('scale-95');
+                    modalImg.classList.add('scale-100');
+                }, 10);
+            });
+        });
+
         closeBtn.addEventListener('click', closeModal);
 
-        // Close on Outside Click
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 closeModal();
             }
         });
 
-        // Close on Escape Key
-        document.addEventListener('keydown', (e) => {
+        doc.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
                 closeModal();
             }
         });
+
+        return true;
     }
 
-    // Form Validation (Only on contact page)
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
+    function initContactForm(doc) {
+        const contactForm = doc.getElementById('contact-form');
+        if (!contactForm) return false;
+
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            const formMessage = document.getElementById('form-message');
+            const name = doc.getElementById('name').value.trim();
+            const email = doc.getElementById('email').value.trim();
+            const message = doc.getElementById('message').value.trim();
+            const formMessage = doc.getElementById('form-message');
 
             if (!name || !email || !message) {
                 showFeedback(formMessage, 'Please fill in all fields.', 'text-red-500');
@@ -112,15 +127,34 @@ document.addEventListener('DOMContentLoaded', () => {
                 contactForm.reset();
             }, 1500);
         });
+
+        return true;
     }
 
-    function showFeedback(element, text, colorClass) {
-        element.textContent = text;
-        element.className = 'mt-4 text-center ' + colorClass;
+    function initPortfolio(doc, win) {
+        const targetDoc = doc || document;
+        const targetWin = win || (typeof window !== 'undefined' ? window : undefined);
+        initMobileMenu(targetDoc);
+        initScrollAnimations(targetDoc, targetWin);
+        initCertificateModal(targetDoc);
+        initContactForm(targetDoc);
     }
 
-    function isValidEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
+    const api = {
+        isImageHref,
+        isValidEmail,
+        showFeedback,
+        initMobileMenu,
+        initScrollAnimations,
+        initCertificateModal,
+        initContactForm,
+        initPortfolio
+    };
+
+    if (typeof module !== 'undefined' && module.exports) {
+        module.exports = api;
+    } else if (root) {
+        root.Portfolio = api;
+        root.document.addEventListener('DOMContentLoaded', () => initPortfolio(root.document, root));
     }
-});
+})(typeof window !== 'undefined' ? window : null);
