@@ -6,43 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Sreerag - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: '#0a0e17',
-                        lightNavy: '#111827',
-                        cardNavy: '#0f172a',
-                        cyan: '#3b82f6',
-                        slate: '#94a3b8',
-                        lightSlate: '#cbd5e1',
-                        white: '#f8fafc',
-                        greenGlow: '#22c55e',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['"Playfair Display"', 'serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="assets/js/tailwind-config.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        body {
-            background-color: #0a0e17;
-        }
-
-        .portfolio-card {
-            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-            border: 1px solid rgba(59, 130, 246, 0.12);
-        }
-
         input,
         textarea {
             transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -55,74 +24,12 @@
         .social-link:hover {
             transform: translateY(-3px);
         }
-
-        @media (prefers-reduced-motion: reduce) {
-
-            .fade-in,
-            .portfolio-card,
-            .social-link {
-                transition: none !important;
-            }
-        }
     </style>
 </head>
 
-<body class="bg-navy text-slate font-sans">
+<body class="bg-navy text-slate font-sans" data-theme="tailwind">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-navy/90 backdrop-blur-sm border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0">
-                    <a href="index.html" class="text-2xl font-serif font-bold text-white">Sreerag<span
-                            class="text-cyan">.</span>S</a>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-2">
-                        <a href="index.html"
-                            class="text-lightSlate hover:text-cyan px-4 py-2 rounded-md text-sm font-medium transition">Home</a>
-                        <a href="about.html"
-                            class="text-lightSlate hover:text-cyan px-4 py-2 rounded-md text-sm font-medium transition">About</a>
-                        <a href="projects.html"
-                            class="text-lightSlate hover:text-cyan px-4 py-2 rounded-md text-sm font-medium transition">Projects</a>
-                        <a href="certifications.html"
-                            class="text-lightSlate hover:text-cyan px-4 py-2 rounded-md text-sm font-medium transition">Certifications</a>
-                        <a href="downloads.html"
-                            class="text-lightSlate hover:text-cyan px-4 py-2 rounded-md text-sm font-medium transition">Downloads</a>
-                        <a href="contact.html"
-                            class="border border-cyan/50 text-cyan bg-white/5 ml-2 px-4 py-2 rounded text-sm font-medium transition">Contact</a>
-                    </div>
-                </div>
-                <!-- Hamburger -->
-                <div class="-mr-2 flex md:hidden">
-                    <button type="button" id="mobile-menu-btn"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-cyan hover:bg-white/5 focus:outline-none">
-                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div class="md:hidden hidden bg-lightNavy border-b border-cyan/10" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html"
-                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                <a href="about.html"
-                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">About</a>
-                <a href="projects.html"
-                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-                <a href="certifications.html"
-                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Certifications</a>
-                <a href="downloads.html"
-                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Downloads</a>
-                <a href="contact.html"
-                    class="text-cyan block px-3 py-2 rounded-md text-base font-medium border-t border-cyan/10 mt-2 pt-4">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <div data-site-nav></div>
 
     <!-- Content -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-24">
@@ -174,58 +81,17 @@
 
             <div class="mt-16 pt-8 border-t border-white/5">
                 <h3 class="text-cyan text-lg font-serif font-bold mb-6">Connect with me</h3>
-                <div class="flex justify-center space-x-8">
-                    <a href="#" class="social-link text-slate hover:text-cyan flex flex-col items-center">
-                        <svg class="h-8 w-8 mb-2" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                        </svg>
-                        <span class="text-xs font-mono">LinkedIn</span>
-                    </a>
-                    <a href="#" class="social-link text-slate hover:text-cyan flex flex-col items-center">
-                        <svg class="h-8 w-8 mb-2" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                        </svg>
-                        <span class="text-xs font-mono">GitHub</span>
-                    </a>
-                    <a href="#" class="social-link text-slate hover:text-cyan flex flex-col items-center">
-                        <svg class="h-8 w-8 mb-2" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M2.003 2.485c-.013.856.262 1.956 1.722 2.054.492.033.492-.68.001-.715-1.202-.083-1.055-.91-.013-1.126.96-.199 2.503.22 3.612 1.455 1.057 1.176 1.879 2.68 2.036 4.757.065.862-1.31.868-1.378-.002-.152-2.072-.946-3.486-1.995-4.654-.959-1.069-2.228-1.545-3.076-1.472-1.295.111-1.127 1.012.012 1.08.491.029.489.742-.002.713-1.232-.072-1.579-1.03-1.46-2.16.039-.371.189-.705.539-.93zm19.997 19.515h-10c-5.523 0-10-4.477-10-10 0-5.522 4.477-10 10-10 2.613 0 5.093 1.002 6.945 2.846.126.125.132.321.018.461l-1.492 1.503c-.114.116-.301.126-.418.016-1.325-1.237-3.097-1.926-5.053-1.926-4.08 0-7.398 3.32-7.398 7.4s3.318 7.4 7.398 7.4c3.316 0 6.014-2.186 6.953-5.2h-4.953c-.161 0-.291-.132-.291-.293v-2.115c0-.161.13-.293.291-.293h7.697c.164 0 .296.136.296.302.006.12.009.28.009.431 0 4.629-3.327 7.962-7.854 7.962" />
-                        </svg>
-                        <span class="text-xs font-mono">Google</span>
-                    </a>
-                </div>
+                <div class="flex justify-center space-x-8" data-social-links="linkedin,github,google"
+                    data-social-variant="labelled"></div>
             </div>
 
         </div>
     </main>
 
-    <footer class="bg-lightNavy py-8 text-center border-t border-cyan/10">
-        <p class="text-sm font-mono text-slate">
-            &copy; 2026 Sreerag. All Rights Reserved.
-        </p>
-    </footer>
+    <div data-site-footer></div>
 
+    <script src="assets/js/site-chrome.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (menuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        }
-
-        document.querySelectorAll('.fade-in').forEach((el, i) => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(12px)';
-            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            setTimeout(() => {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-            }, 80 * i);
-        });
-    </script>
 </body>
 
 </html>

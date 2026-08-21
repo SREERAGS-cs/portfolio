@@ -1,0 +1,62 @@
+/* Shared styles for the Tailwind-based pages
+   (projects, certifications, downloads, contact). */
+
+body {
+  background-color: #0a0e17;
+}
+
+/* ── Cards & pills ── */
+.portfolio-card {
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(59, 130, 246, 0.12);
+}
+
+.portfolio-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.25);
+}
+
+.tag-pill {
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: rgba(59, 130, 246, 0.06);
+}
+
+/* ── Reveal-on-load animation (staggered by main.js) ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Mobile menu (toggled by main.js) ── */
+.site-mobile-menu {
+  display: none;
+}
+
+.site-mobile-menu.open {
+  display: block;
+}
+
+@media (min-width: 768px) {
+
+  .site-mobile-menu,
+  .site-mobile-menu.open {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .fade-in,
+  .portfolio-card,
+  .social-link,
+  .download-row {
+    transition: none !important;
+  }
+}
