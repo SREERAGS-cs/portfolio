@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Certifications | Sreerag - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -32,7 +35,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
     <style>
         body {
             background-color: #0a0e17;
@@ -181,7 +183,7 @@
                         Hands-on with optimized Python, OOP principles, exception handling, and building
                         database-driven applications.
                     </p>
-                    <a href="certificates-1.jpg" target="_blank"
+                    <a href="certificates-1.jpg" target="_blank" rel="noopener noreferrer"
                         class="view-certificate mt-auto pt-4 border-t border-cyan/10 inline-flex items-center text-sm font-medium text-white hover:text-cyan transition">
                         View Certificate
                         <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -214,7 +216,7 @@
                         Core database concepts and SQL — table design, constraints, joins, subqueries, and
                         aggregate functions with hands-on queries.
                     </p>
-                    <a href="certificates-2.jpg" target="_blank"
+                    <a href="certificates-2.jpg" target="_blank" rel="noopener noreferrer"
                         class="view-certificate mt-auto pt-4 border-t border-cyan/10 inline-flex items-center text-sm font-medium text-white hover:text-cyan transition">
                         View Certificate
                         <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -247,7 +249,7 @@
                         Java fundamentals — OOP concepts, control structures, exception handling, and basic
                         data structures with practical exercises.
                     </p>
-                    <a href="certificates-3.jpg" target="_blank"
+                    <a href="certificates-3.jpg" target="_blank" rel="noopener noreferrer"
                         class="view-certificate mt-auto pt-4 border-t border-cyan/10 inline-flex items-center text-sm font-medium text-white hover:text-cyan transition">
                         View Certificate
                         <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -280,7 +282,7 @@
                         Python fundamentals — variables, loops, functions, conditional statements, and basic
                         algorithmic problem-solving.
                     </p>
-                    <a href="certificates-4.jpg" target="_blank"
+                    <a href="certificates-4.jpg" target="_blank" rel="noopener noreferrer"
                         class="view-certificate mt-auto pt-4 border-t border-cyan/10 inline-flex items-center text-sm font-medium text-white hover:text-cyan transition">
                         View Certificate
                         <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -313,7 +315,6 @@
             class="max-h-[90vh] max-w-full rounded shadow-2xl transform scale-95 transition-transform duration-300">
     </div>
 
-    <script src="assets/js/main.js"></script>
     <script>
         // Mobile menu toggle
         const menuBtn = document.getElementById('mobile-menu-btn');
