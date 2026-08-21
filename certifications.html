@@ -6,125 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certifications | Sreerag - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: '#0a0e17',
-                        lightNavy: '#111827',
-                        cardNavy: '#0f172a',
-                        cyan: '#3b82f6',
-                        slate: '#94a3b8',
-                        lightSlate: '#cbd5e1',
-                        white: '#f8fafc',
-                        greenGlow: '#22c55e',
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['"Playfair Display"', 'serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="assets/js/tailwind-config.js"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        body {
-            background-color: #0a0e17;
-        }
-
-        .portfolio-card {
-            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-            border: 1px solid rgba(59, 130, 246, 0.12);
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(59, 130, 246, 0.4);
-            box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.25);
-        }
-
-        .tag-pill {
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            background: rgba(59, 130, 246, 0.06);
-        }
-
         .level-pill {
             border: 1px solid rgba(34, 197, 94, 0.3);
             background: rgba(34, 197, 94, 0.06);
         }
-
-        @media (prefers-reduced-motion: reduce) {
-
-            .fade-in,
-            .portfolio-card {
-                transition: none !important;
-            }
-        }
     </style>
 </head>
 
-<body class="bg-navy text-slate font-sans">
+<body class="bg-navy text-slate font-sans" data-theme="tailwind">
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-navy/90 backdrop-blur-sm border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0">
-                    <a href="index.html" class="text-2xl font-serif font-bold text-white">Sreerag<span
-                            class="text-cyan">.</span>S</a>
-                </div>
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-2">
-                        <a href="index.html"
-                            class="text-lightSlate hover:text-cyan px-4 py-2 rounded-md text-sm font-medium transition">Home</a>
-                        <a href="about.html"
-                            class="text-lightSlate hover:text-cyan px-4 py-2 rounded-md text-sm font-medium transition">About</a>
-                        <a href="projects.html"
-                            class="text-lightSlate hover:text-cyan px-4 py-2 rounded-md text-sm font-medium transition">Projects</a>
-                        <a href="certifications.html"
-                            class="text-cyan px-4 py-2 rounded-md text-sm font-medium transition bg-white/5">Certifications</a>
-                        <a href="downloads.html"
-                            class="text-lightSlate hover:text-cyan px-4 py-2 rounded-md text-sm font-medium transition">Downloads</a>
-                        <a href="contact.html"
-                            class="border border-cyan/50 text-cyan hover:bg-cyan/10 ml-2 px-4 py-2 rounded text-sm font-medium transition">Contact</a>
-                    </div>
-                </div>
-                <!-- Hamburger -->
-                <div class="-mr-2 flex md:hidden">
-                    <button type="button" id="mobile-menu-btn"
-                        class="inline-flex items-center justify-center p-2 rounded-md text-cyan hover:bg-white/5 focus:outline-none">
-                        <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div class="md:hidden hidden bg-lightNavy border-b border-cyan/10" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html"
-                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Home</a>
-                <a href="about.html"
-                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">About</a>
-                <a href="projects.html"
-                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Projects</a>
-                <a href="certifications.html"
-                    class="text-cyan block px-3 py-2 rounded-md text-base font-medium">Certifications</a>
-                <a href="downloads.html"
-                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium">Downloads</a>
-                <a href="contact.html"
-                    class="text-lightSlate hover:text-cyan block px-3 py-2 rounded-md text-base font-medium border-t border-cyan/10 mt-2 pt-4">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <div data-site-nav></div>
 
     <!-- Content -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-24">
@@ -294,11 +191,7 @@
         </div>
     </main>
 
-    <footer class="bg-lightNavy py-8 text-center border-t border-cyan/10">
-        <p class="text-sm font-mono text-slate">
-            &copy; 2026 Sreerag. All Rights Reserved.
-        </p>
-    </footer>
+    <div data-site-footer></div>
 
     <!-- Image Modal -->
     <div id="image-modal"
@@ -313,54 +206,8 @@
             class="max-h-[90vh] max-w-full rounded shadow-2xl transform scale-95 transition-transform duration-300">
     </div>
 
+    <script src="assets/js/site-chrome.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        if (menuBtn && mobileMenu) {
-            menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        }
-
-        // Certificate modal
-        const modal = document.getElementById('image-modal');
-        const modalImg = document.getElementById('modal-image');
-        const modalClose = document.getElementById('modal-close');
-
-        document.querySelectorAll('.view-certificate').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                modalImg.src = link.getAttribute('href');
-                modal.classList.remove('hidden');
-                requestAnimationFrame(() => {
-                    modal.classList.remove('opacity-0');
-                    modalImg.classList.remove('scale-95');
-                });
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        function closeModal() {
-            modal.classList.add('opacity-0');
-            modalImg.classList.add('scale-95');
-            document.body.style.overflow = '';
-            setTimeout(() => modal.classList.add('hidden'), 300);
-        }
-        modalClose.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-
-        // Fade-in on load
-        document.querySelectorAll('.fade-in').forEach((el, i) => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(12px)';
-            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            setTimeout(() => {
-                el.style.opacity = '1';
-                el.style.transform = 'translateY(0)';
-            }, 80 * i);
-        });
-    </script>
 </body>
 
 </html>
