@@ -1,0 +1,778 @@
+﻿/* ==========================================================================
+   responsive.css: Sreerag S Portfolio
+   Adjustments for smaller screens. Base (desktop) styles live in style.css.
+
+   Breakpoints (match Bootstrap 5):
+     lg  < 1200px   narrow laptops
+     lg  < 992px    tablets (navbar collapses here)
+     md  < 768px    large phones
+     sm  < 576px    phones
+   Also: touch devices, and short-height landscape screens.
+   ========================================================================== */
+
+
+/* NARROW LAPTOPS (992px to 1199px)
+   Keeps all nav links on one line before the menu collapses. ------------- */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .site-nav .nav-link {
+        padding: 0.5rem 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .site-nav .nav-link::after {
+        left: 0.5rem;
+        right: 0.5rem;
+    }
+
+    .brand-name {
+        font-size: 0.95rem;
+    }
+}
+
+
+/* TABLETS AND BELOW (< 992px) -------------------------------------------- */
+@media (max-width: 991.98px) {
+
+    /* Collapsed navbar menu */
+    .site-nav .navbar-collapse {
+        margin-top: 12px;
+        padding: 8px 0 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .site-nav .nav-link {
+        padding: 0.7rem 0.25rem;
+        font-size: 1rem;
+    }
+
+    .site-nav .nav-link::after {
+        display: none;
+    }
+
+    .site-nav .nav-link.active {
+        color: var(--accent);
+    }
+
+    .site-nav .btn-accent {
+        display: block;
+        margin-top: 8px;
+        text-align: center;
+    }
+
+    /* Hero: stack text above the profile card */
+    .hero {
+        min-height: auto;
+        padding: calc(var(--nav-height) + 40px) 0 64px;
+    }
+
+    .hero-lead {
+        max-width: 100%;
+    }
+
+    .profile-card,
+    .profile-card-futuristic,
+    .hero-portrait-container,
+    .hero-avatar-showcase {
+        margin-top: 24px;
+    }
+
+    .hero-orb-cyan {
+        width: 380px;
+        height: 380px;
+        filter: blur(60px);
+    }
+
+    .hero-orb-blue {
+        width: 440px;
+        height: 440px;
+        filter: blur(70px);
+    }
+
+    .hero-orb-violet {
+        width: 300px;
+        height: 300px;
+        filter: blur(65px);
+    }
+
+    /* Sections */
+    .section {
+        padding: 72px 0;
+    }
+
+    .section-header {
+        margin-bottom: 36px;
+    }
+}
+
+
+/* LARGE PHONES (< 768px) ------------------------------------------------- */
+@media (max-width: 767.98px) {
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .card-surface {
+        padding: 22px;
+    }
+
+    /* Hero buttons share the width evenly */
+    .hero-actions .btn {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+
+    /* Timeline slightly tighter */
+    .timeline {
+        padding-left: 36px;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-dot {
+        left: -30px;
+        width: 18px;
+        height: 18px;
+    }
+
+    .timeline-node-icon {
+        left: -38px;
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+
+    .edu-card {
+        padding: 18px 16px;
+    }
+
+    .edu-score-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 10px 14px;
+    }
+
+    .edu-matrix-card {
+        margin-top: 14px;
+    }
+
+    /* Contact */
+    .contact-form {
+        padding: 24px;
+    }
+}
+
+
+/* PHONES (< 576px) ------------------------------------------------------- */
+@media (max-width: 575.98px) {
+
+    body {
+        font-size: 0.97rem;
+    }
+
+    .hero {
+        padding-bottom: 48px;
+    }
+
+    .hero-title {
+        margin-bottom: 16px;
+    }
+
+    .hero-lead {
+        font-size: 1.05rem;
+    }
+
+    .section {
+        padding: 52px 0;
+    }
+
+    /* Profile card: stack label above value so long text never overflows */
+    .profile-card-body {
+        padding: 16px;
+        font-size: 0.85rem;
+    }
+
+    .profile-card-body>div {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .profile-card-body dt {
+        flex-basis: auto;
+    }
+
+    /* Project number is decorative; make it smaller */
+    .project-number {
+        font-size: 1.3rem;
+    }
+
+    /* Project card mobile optimizations */
+    .project-card-body {
+        padding: 20px 18px 22px;
+    }
+
+    .project-spec-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .project-filter-bar {
+        padding: 4px;
+        gap: 4px;
+    }
+
+    .project-filter-btn {
+        padding: 6px 14px;
+        font-size: 0.78rem;
+    }
+
+    .project-header-right-group {
+        gap: 6px;
+    }
+
+    .project-status-badge {
+        padding: 4px 8px;
+        font-size: 0.65rem;
+    }
+
+    /* Certification cards mobile enhancements */
+    .cert-filter-wrapper {
+        margin-bottom: 1.5rem;
+    }
+
+    .cert-filter-wrapper .project-filter-bar {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        gap: 6px;
+    }
+
+    .cert-filter-btn {
+        padding: 6px 12px;
+        font-size: 0.76rem;
+    }
+
+    .cert-card-modern {
+        padding: 1.25rem 1.15rem;
+    }
+
+    .cert-brand-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .cert-brand-icon svg {
+        width: 19px;
+        height: 19px;
+    }
+
+    .cert-domain-pill {
+        font-size: 0.68rem;
+        padding: 3px 8px;
+    }
+
+    .cert-card-title {
+        font-size: 1.05rem;
+    }
+
+    .cert-issuer {
+        font-size: 0.82rem;
+    }
+
+    .cert-desc {
+        font-size: 0.82rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+
+    /* Areas of Interest mobile optimizations */
+    .interest-card-modern {
+        padding: 1.35rem 1.15rem 1.15rem;
+    }
+
+    .interest-icon-pod {
+        width: 40px;
+        height: 40px;
+    }
+
+    .interest-icon-pod svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .interest-title {
+        font-size: 1.1rem;
+    }
+
+    .interest-desc {
+        font-size: 0.84rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+
+    .interest-tag {
+        font-size: 0.7rem;
+        padding: 2px 7px;
+    }
+
+    .interest-linkage {
+        font-size: 0.74rem;
+    }
+
+    /* About section mobile optimizations */
+    .about-pillars-grid,
+    .about-values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-tab-nav {
+        width: 100%;
+        border-radius: 16px;
+        gap: 6px;
+    }
+
+    .about-tab-btn {
+        flex: 1 1 auto;
+        justify-content: center;
+        padding: 7px 12px;
+        font-size: 0.78rem;
+    }
+
+    .about-dossier-card {
+        padding: 18px 16px;
+    }
+
+    .dossier-metrics-grid {
+        gap: 6px;
+    }
+
+    .dossier-metric-val {
+        font-size: 1.15rem;
+    }
+
+    .dossier-spec-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .spec-value {
+        text-align: left;
+    }
+
+    /* Live Skills mobile optimizations */
+    .skills-marquee-wrap {
+        margin-bottom: 24px;
+    }
+
+    .live-skill-badge {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        gap: 7px;
+    }
+
+    .live-skill-badge .tech-logo {
+        width: 16px;
+        height: 16px;
+    }
+
+    .skill-status-pill {
+        font-size: 0.65rem;
+        padding: 3px 8px;
+    }
+
+    /* Hero mobile adjustments */
+    .hero-heading-main {
+        min-height: 2.7em;
+    }
+
+    .hero-tech-dock {
+        border-radius: 16px;
+        padding: 10px 14px;
+        width: 100%;
+    }
+
+    .hero-dock-label {
+        border-right: none;
+        padding-right: 0;
+        width: 100%;
+        margin-bottom: 2px;
+    }
+
+    .hero-metrics-strip {
+        gap: 14px;
+        justify-content: space-between;
+    }
+
+    .hero-socials-inline {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 6px;
+    }
+
+    .hero-floating-token {
+        padding: 6px 12px;
+        border-radius: 10px;
+    }
+
+    .hero-floating-token.token-react {
+        top: -12px;
+        right: 0px;
+    }
+
+    .hero-floating-token.token-python {
+        bottom: -14px;
+        left: 0px;
+    }
+
+    .hero-portrait-container {
+        max-width: 330px;
+        margin-top: 28px;
+    }
+
+    .portrait-caption-bar {
+        padding: 10px 14px;
+    }
+
+    .portrait-name {
+        font-size: 0.94rem;
+    }
+
+    .portrait-title {
+        font-size: 0.68rem;
+    }
+
+    .portrait-node-badge {
+        font-size: 0.66rem;
+        padding: 3px 8px;
+    }
+
+    .portrait-status-floating {
+        top: 10px;
+        right: 10px;
+        padding: 4px 10px;
+    }
+
+    .portrait-status-text {
+        font-size: 0.66rem;
+    }
+
+    .hero-avatar-showcase {
+        max-width: 270px;
+        margin-top: 24px;
+    }
+
+    .hero-avatar-round {
+        width: 185px;
+        height: 185px;
+    }
+
+    .avatar-orbit-ring {
+        width: 194px;
+        height: 194px;
+    }
+
+    .avatar-glow-backdrop {
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero-avatar-showcase .hero-floating-token.token-react {
+        top: -6px;
+        right: -10px;
+    }
+
+    .hero-avatar-showcase .hero-floating-token.token-python {
+        bottom: 46px;
+        left: -14px;
+    }
+
+    .avatar-caption-pill {
+        max-width: 260px;
+        padding: 8px 12px;
+        margin-top: 18px;
+    }
+
+    .avatar-name {
+        font-size: 0.9rem;
+    }
+
+    .avatar-cit-badge {
+        font-size: 0.64rem;
+    }
+
+    .avatar-verified-badge {
+        font-size: 0.62rem;
+        padding: 2px 7px;
+    }
+
+    /* Activities mobile adjustments */
+    .activity-card-modern {
+        padding: 1.35rem 1.15rem 1.15rem;
+    }
+
+    .activity-icon-pod {
+        width: 40px;
+        height: 40px;
+    }
+
+    .activity-icon-pod svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .activity-title {
+        font-size: 1.1rem;
+    }
+
+    .activity-desc {
+        font-size: 0.84rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+
+    /* Contact mobile adjustments */
+    .contact-hub-title {
+        font-size: 1.35rem;
+    }
+
+    .contact-channel-card {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .channel-icon-pod {
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+    }
+
+    .channel-value {
+        font-size: 0.82rem;
+    }
+
+    .contact-terminal-form {
+        padding: 18px 16px 14px;
+    }
+
+    .terminal-card-topbar {
+        padding: 10px 14px;
+    }
+
+    .terminal-title {
+        font-size: 0.72rem;
+    }
+
+    .topic-presets-section {
+        padding: 10px 14px 8px;
+    }
+
+    .topic-chip {
+        font-size: 0.72rem;
+        padding: 4px 10px;
+    }
+
+    /* Resume Modal mobile adjustments */
+    .resume-modal-header {
+        padding: 18px 18px 10px;
+    }
+
+    .resume-modal-icon-pod {
+        width: 38px;
+        height: 38px;
+        font-size: 1.15rem;
+    }
+
+    .resume-modal-title {
+        font-size: 1.15rem;
+    }
+
+    .resume-modal-body {
+        padding: 10px 18px 16px;
+    }
+
+    .resume-track-card {
+        padding: 18px 16px;
+    }
+
+    .resume-modal-footer {
+        padding: 8px 18px 18px;
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .resume-modal-footer .btn {
+        width: 100%;
+    }
+
+    /* Footer content centred */
+    .site-footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+/* ULTRA-COMPACT MOBILE SCREENS (<= 375px) -------------------------------- */
+@media (max-width: 375px) {
+    .hero-avatar-showcase {
+        max-width: 230px;
+    }
+
+    .hero-avatar-round {
+        width: 160px;
+        height: 160px;
+    }
+
+    .avatar-orbit-ring {
+        width: 168px;
+        height: 168px;
+    }
+
+    .avatar-glow-backdrop {
+        width: 175px;
+        height: 175px;
+    }
+
+    .hero-title {
+        font-size: 1.85rem;
+    }
+
+    .hero-heading-main {
+        min-height: 3.1em;
+    }
+
+    .hero-tech-dock {
+        padding: 8px 10px;
+    }
+
+    .hero-mini-badge {
+        font-size: 0.7rem;
+        padding: 3px 7px;
+    }
+
+    .hero-metrics-strip {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .metric-divider {
+        display: none;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .avatar-caption-pill {
+        max-width: 220px;
+        padding: 6px 10px;
+    }
+
+    .avatar-name {
+        font-size: 0.86rem;
+    }
+
+    .avatar-cit-badge {
+        font-size: 0.6rem;
+    }
+}
+
+/* TOUCH DEVICES -----------------------------------------------------------
+   Hover lifts feel odd on touch screens, so they are switched off. ------- */
+@media (hover: none) {
+    .card-surface:hover {
+        transform: none !important;
+        box-shadow: var(--shadow-sm);
+        border-color: var(--soft-grey);
+    }
+
+    .card-glare {
+        display: none !important;
+    }
+
+    .hero-floating-token:hover,
+    .hero-mini-badge:hover {
+        transform: none !important;
+    }
+
+    .btn-accent:hover,
+    .btn-outline-accent:hover,
+    .btn-outline-light:hover,
+    .social-link:hover {
+        transform: none !important;
+    }
+}
+
+
+/* SHORT LANDSCAPE SCREENS (phones turned sideways) ----------------------- */
+@media (max-height: 480px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding-top: calc(var(--nav-height) + 24px);
+        padding-bottom: 40px;
+    }
+}
+
+
+/* VERY LARGE SCREENS (>= 1600px) ------------------------------------------ */
+@media (min-width: 1600px) {
+    body {
+        font-size: 1.05rem;
+    }
+
+    .hero-lead {
+        max-width: 620px;
+    }
+}
+
+
+/* PRINT -------------------------------------------------------------------
+   Keeps a printed copy clean: no fixed navbar, no reveal hiding. --------- */
+@media print {
+
+    .site-nav,
+    .presentation-deck-nav,
+    .deck-progress-bar,
+    .hero-particles-canvas,
+    .hero-ambient-orbs,
+    .avatar-glow-backdrop,
+    .avatar-orbit-ring,
+    .hero-floating-token,
+    .scroll-progress-bar,
+    .skip-link,
+    .contact-form,
+    .back-to-top {
+        display: none !important;
+    }
+
+    .js .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .hero,
+    .section-dark {
+        background: none;
+        color: var(--slate);
+    }
+
+    .hero-title,
+    .section-dark .section-title {
+        color: var(--navy);
+    }
+
+    .section {
+        padding: 32px 0;
+    }
+}

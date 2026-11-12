@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Portfolio of Sreerag S, a Software Systems student interested in Python, databases and web development.">
+    <meta name="theme-color" content="#101828">
+    <title>Sreerag S | Software Systems Student</title>
+
+    <!-- Favicon (file is created in a later step) -->
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 and Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <header>
+        <nav class="navbar navbar-expand-lg site-nav fixed-top" aria-label="Main navigation">
+            <div class="container">
+                <a class="navbar-brand site-brand" href="#home">
+                    <span class="brand-mark">SS</span>
+                    <span class="brand-name">Sreerag S</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                    aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#research">Learning</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#achievements">Activities</a></li>
+                        <li class="nav-item ms-lg-2"><a class="btn btn-accent btn-sm" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main">
+
+        <!-- ===================== 1. HOME ===================== -->
+        <section id="home" class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <div class="row align-items-center g-5">
+
+                    <div class="col-lg-7">
+                        <p class="eyebrow">Software Systems Student</p>
+                        <h1 id="hero-title" class="hero-title">Hi, I'm <span class="text-accent">Sreerag S</span>.</h1>
+                        <p class="hero-lead">
+                            I build reliable software with Python, SQL and the web. I enjoy turning
+                            database-backed ideas into clean, working applications.
+                        </p>
+
+                        <ul class="tag-list" aria-label="Technical interests">
+                            <li class="tag tag-dark">Python</li>
+                            <li class="tag tag-dark">Databases &amp; SQL</li>
+                            <li class="tag tag-dark">Web Development</li>
+                            <li class="tag tag-dark">Object-Oriented Programming</li>
+                        </ul>
+
+                        <div class="hero-actions">
+                            <!-- Replace assets/documents/resume.pdf with your own resume -->
+                            <a class="btn btn-accent btn-lg" href="assets/documents/resume.pdf" download>
+                                <i class="bi bi-download me-2"></i>Download Resume
+                            </a>
+                            <a class="btn btn-outline-light btn-lg" href="#projects">
+                                <i class="bi bi-grid me-2"></i>View Projects
+                            </a>
+                        </div>
+
+                        <div class="social-links" aria-label="Social links">
+                            <!-- EDIT: replace "#" with your real profile URLs -->
+                            <a href="#" class="social-link" aria-label="GitHub profile" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="bi bi-github"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn profile" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="mailto:sreeragkootale@gmail.com" class="social-link" aria-label="Send an email">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <aside class="profile-card" aria-label="Profile summary">
+                            <div class="profile-card-header">
+                                <span class="dot dot-1"></span><span class="dot dot-2"></span><span
+                                    class="dot dot-3"></span>
+                                <span class="profile-card-file">profile.txt</span>
+                            </div>
+                            <dl class="profile-card-body">
+                                <div>
+                                    <dt>name</dt>
+                                    <dd>Sreerag S</dd>
+                                </div>
+                                <div>
+                                    <dt>degree</dt>
+                                    <dd>MSc. Software Systems</dd>
+                                </div>
+                                <div>
+                                    <dt>focus</dt>
+                                    <dd>Python, SQL, Web</dd>
+                                </div>
+                                <div>
+                                    <dt>learning</dt>
+                                    <dd>Java, OOP, DBMS</dd>
+                                </div>
+                            </dl>
+                        </aside>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== 2. ABOUT ===================== -->
+        <section id="about" class="section" aria-labelledby="about-title">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="section-index">01 / About</span>
+                    <h2 id="about-title" class="section-title">About Me</h2>
+                </header>
+
+                <div class="row g-4">
+                    <div class="col-lg-7 reveal">
+                        <!-- EDIT: personalise these paragraphs in your own voice -->
+                        <p>
+                            I'm a Software Systems student at Coimbatore Institute of Technology with a
+                            strong interest in how software and data fit together. My work so far spans
+                            Python programming, relational databases and front-end web development.
+                        </p>
+                        <p>
+                            I learn best by building. Each course I complete and each project I write
+                            helps me understand how real systems are structured, from the database
+                            schema to the interface people actually use.
+                        </p>
+                        <p>
+                            I'm looking for opportunities to apply and grow these skills through
+                            internships and software development roles.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-5 reveal">
+                        <div class="card-surface">
+                            <h3 class="card-heading">At a glance</h3>
+                            <ul class="glance-list">
+                                <li><i class="bi bi-mortarboard"></i><span><strong>Academic background:</strong> MSc.
+                                        Software Systems</span></li>
+                                <li><i class="bi bi-compass"></i><span><strong>Career interests:</strong> Software
+                                        development, database-driven applications</span></li>
+                                <li><i class="bi bi-cpu"></i><span><strong>Technical interests:</strong> Python, SQL,
+                                        web technologies, OOP</span></li>
+                                <li><i class="bi bi-lightbulb"></i><span><strong>Approach:</strong> Learn by building,
+                                        then refine</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== 3. EDUCATION ===================== -->
+        <section id="education" class="section section-tint" aria-labelledby="education-title">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="section-index">02 / Education</span>
+                    <h2 id="education-title" class="section-title">Education</h2>
+                </header>
+
+                <ol class="timeline">
+                    <li class="timeline-item reveal">
+                        <span class="timeline-dot" aria-hidden="true"></span>
+                        <div class="card-surface">
+                            <p class="timeline-date">Expected graduation: 2029</p>
+                            <h3 class="card-heading">MSc. Software Systems</h3>
+                            <p class="timeline-place">Coimbatore Institute of Technology</p>
+                            <p class="mb-0">CGPA: <strong>8.30</strong> (up to 4th semester)</p>
+                            <ul class="tag-list tag-list-light mt-3" aria-label="Relevant coursework">
+                                <li class="tag">Python</li>
+                                <li class="tag">DBMS</li>
+                                <li class="tag">SQL &amp; MySQL</li>
+                                <li class="tag">OOP</li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="timeline-item reveal">
+                        <span class="timeline-dot" aria-hidden="true"></span>
+                        <div class="card-surface">
+                            <p class="timeline-date">2024</p>
+                            <h3 class="card-heading">Higher Secondary (12th)</h3>
+                            <p class="timeline-place">Carmel Garden Matriculation Higher Secondary School</p>
+                            <p class="mb-0">Score: <strong>89%</strong></p>
+                        </div>
+                    </li>
+
+                    <li class="timeline-item reveal">
+                        <span class="timeline-dot" aria-hidden="true"></span>
+                        <div class="card-surface">
+                            <p class="timeline-date">2022</p>
+                            <h3 class="card-heading">Secondary School (10th)</h3>
+                            <p class="timeline-place">Carmel Garden Matriculation Higher Secondary School</p>
+                            <p class="mb-0">Score: <strong>92%</strong></p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ===================== 4. SKILLS ===================== -->
+        <section id="skills" class="section" aria-labelledby="skills-title">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="section-index">03 / Skills</span>
+                    <h2 id="skills-title" class="section-title">Technical Skills</h2>
+                </header>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <article class="card-surface skill-card">
+                            <i class="bi bi-code-slash skill-icon" aria-hidden="true"></i>
+                            <h3 class="card-heading">Programming Languages</h3>
+                            <ul class="tag-list tag-list-light">
+                                <li class="tag">Python</li>
+                                <li class="tag">Java (introductory)</li>
+                                <li class="tag">C (file handling)</li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <article class="card-surface skill-card">
+                            <i class="bi bi-globe2 skill-icon" aria-hidden="true"></i>
+                            <h3 class="card-heading">Web Technologies</h3>
+                            <ul class="tag-list tag-list-light">
+                                <li class="tag">HTML5</li>
+                                <li class="tag">CSS3</li>
+                                <li class="tag">JavaScript</li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <article class="card-surface skill-card">
+                            <i class="bi bi-database skill-icon" aria-hidden="true"></i>
+                            <h3 class="card-heading">Databases</h3>
+                            <ul class="tag-list tag-list-light">
+                                <li class="tag">SQL</li>
+                                <li class="tag">MySQL</li>
+                                <li class="tag">DBMS concepts</li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-lg-6 reveal">
+                        <article class="card-surface skill-card">
+                            <i class="bi bi-tools skill-icon" aria-hidden="true"></i>
+                            <h3 class="card-heading">Frameworks and Tools</h3>
+                            <!-- EDIT: add only tools you have genuinely used -->
+                            <ul class="tag-list tag-list-light">
+                                <li class="tag">Bootstrap</li>
+                                <li class="tag">Git &amp; GitHub</li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 col-lg-6 reveal">
+                        <article class="card-surface skill-card">
+                            <i class="bi bi-diagram-3 skill-icon" aria-hidden="true"></i>
+                            <h3 class="card-heading">Core Computer Science Concepts</h3>
+                            <ul class="tag-list tag-list-light">
+                                <li class="tag">Object-Oriented Programming</li>
+                                <li class="tag">Database Management Systems</li>
+                                <li class="tag">File Handling</li>
+                                <li class="tag">Software Development</li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== 5. PROJECTS ===================== -->
+        <section id="projects" class="section section-tint" aria-labelledby="projects-title">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="section-index">04 / Projects</span>
+                    <h2 id="projects-title" class="section-title">Projects</h2>
+                    <p class="section-subtitle">Selected academic and personal builds.</p>
+                </header>
+
+                <div class="row g-4">
+
+                    <!-- Project 1 -->
+                    <div class="col-lg-4 reveal">
+                        <article class="card-surface project-card">
+                            <div class="project-top">
+                                <i class="bi bi-people project-icon" aria-hidden="true"></i>
+                                <span class="project-number">01</span>
+                            </div>
+                            <h3 class="card-heading">BondBook</h3>
+                            <p class="project-subtitle">Relationship Management System</p>
+                            <!-- EDIT: refine this description to match what you built -->
+                            <p>A system for recording and managing relationships and the information attached to them.
+                            </p>
+
+                            <h4 class="mini-heading">Technologies</h4>
+                            <!-- EDIT: list the technologies you actually used -->
+                            <ul class="tag-list tag-list-light">
+                                <li class="tag">Python</li>
+                                <li class="tag">SQL</li>
+                            </ul>
+
+                            <h4 class="mini-heading">Key features</h4>
+                            <ul class="feature-list">
+                                <li>EDIT: Add a key feature</li>
+                                <li>EDIT: Add a key feature</li>
+                                <li>EDIT: Add a key feature</li>
+                            </ul>
+
+                            <a href="#" class="btn btn-outline-accent btn-sm mt-auto" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="bi bi-github me-2"></i>View on GitHub
+                            </a>
+                        </article>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="col-lg-4 reveal">
+                        <article class="card-surface project-card">
+                            <div class="project-top">
+                                <i class="bi bi-journal-text project-icon" aria-hidden="true"></i>
+                                <span class="project-number">02</span>
+                            </div>
+                            <h3 class="card-heading">Student Report Card Management System</h3>
+                            <p class="project-subtitle">Academic Records</p>
+                            <p>A system for storing student details and managing their academic results.</p>
+
+                            <h4 class="mini-heading">Technologies</h4>
+                            <ul class="tag-list tag-list-light">
+                                <li class="tag">EDIT</li>
+                                <li class="tag">EDIT</li>
+                            </ul>
+
+                            <h4 class="mini-heading">Key features</h4>
+                            <ul class="feature-list">
+                                <li>EDIT: Add a key feature</li>
+                                <li>EDIT: Add a key feature</li>
+                                <li>EDIT: Add a key feature</li>
+                            </ul>
+
+                            <a href="#" class="btn btn-outline-accent btn-sm mt-auto" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="bi bi-github me-2"></i>View on GitHub
+                            </a>
+                        </article>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="col-lg-4 reveal">
+                        <article class="card-surface project-card">
+                            <div class="project-top">
+                                <i class="bi bi-car-front project-icon" aria-hidden="true"></i>
+                                <span class="project-number">03</span>
+                            </div>
+                            <h3 class="card-heading">Vehicle Insurance Management System</h3>
+                            <p class="project-subtitle">Policy and Customer Records</p>
+                            <p>A system for managing vehicle insurance records, customers and policies.</p>
+
+                            <h4 class="mini-heading">Technologies</h4>
+                            <ul class="tag-list tag-list-light">
+                                <li class="tag">EDIT</li>
+                                <li class="tag">EDIT</li>
+                            </ul>
+
+                            <h4 class="mini-heading">Key features</h4>
+                            <ul class="feature-list">
+                                <li>EDIT: Add a key feature</li>
+                                <li>EDIT: Add a key feature</li>
+                                <li>EDIT: Add a key feature</li>
+                            </ul>
+
+                            <a href="#" class="btn btn-outline-accent btn-sm mt-auto" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="bi bi-github me-2"></i>View on GitHub
+                            </a>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== 6. CERTIFICATIONS ===================== -->
+        <section id="certifications" class="section" aria-labelledby="cert-title">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="section-index">05 / Certifications</span>
+                    <h2 id="cert-title" class="section-title">Certifications</h2>
+                </header>
+
+                <div class="row g-4">
+
+                    <div class="col-md-6 reveal">
+                        <article class="card-surface cert-card">
+                            <i class="bi bi-patch-check cert-icon" aria-hidden="true"></i>
+                            <div>
+                                <h3 class="card-heading">Advanced Python</h3>
+                                <p class="cert-issuer">Simplilearn</p>
+                                <p>Advanced concepts in Python programming.</p>
+                                <p class="cert-meta">Completed: <span class="placeholder">Month Year</span></p>
+                                <a href="#" class="link-accent">View certificate <i
+                                        class="bi bi-arrow-up-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 reveal">
+                        <article class="card-surface cert-card">
+                            <i class="bi bi-patch-check cert-icon" aria-hidden="true"></i>
+                            <div>
+                                <h3 class="card-heading">Database and SQL</h3>
+                                <p class="cert-issuer">Infosys Springboard</p>
+                                <p>Database fundamentals and SQL querying.</p>
+                                <p class="cert-meta">Completed: <span class="placeholder">Month Year</span></p>
+                                <a href="#" class="link-accent">View certificate <i
+                                        class="bi bi-arrow-up-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 reveal">
+                        <article class="card-surface cert-card">
+                            <i class="bi bi-patch-check cert-icon" aria-hidden="true"></i>
+                            <div>
+                                <h3 class="card-heading">Introduction to Java</h3>
+                                <p class="cert-issuer">Infosys Springboard</p>
+                                <p>Introductory course on Java programming.</p>
+                                <p class="cert-meta">Completed: <span class="placeholder">Month Year</span></p>
+                                <a href="#" class="link-accent">View certificate <i
+                                        class="bi bi-arrow-up-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-md-6 reveal">
+                        <article class="card-surface cert-card">
+                            <i class="bi bi-patch-check cert-icon" aria-hidden="true"></i>
+                            <div>
+                                <h3 class="card-heading">Soft Skills Development</h3>
+                                <p class="cert-issuer">NPTEL</p>
+                                <p>Communication and professional skills development.</p>
+                                <p class="cert-meta">Completed: <span class="placeholder">Month Year</span></p>
+                                <a href="#" class="link-accent">View certificate <i
+                                        class="bi bi-arrow-up-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== 7. RESEARCH AND LEARNING ===================== -->
+        <section id="research" class="section section-tint" aria-labelledby="research-title">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="section-index">06 / Learning</span>
+                    <h2 id="research-title" class="section-title">Research and Learning</h2>
+                </header>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3 reveal">
+                        <article class="card-surface info-card">
+                            <h3 class="card-heading">Research Interests</h3>
+                            <p>EDIT: Add the topics you want to explore in depth.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-3 reveal">
+                        <article class="card-surface info-card">
+                            <h3 class="card-heading">Technical Learning</h3>
+                            <p>Python, database design, SQL, Java fundamentals and web development.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-3 reveal">
+                        <article class="card-surface info-card">
+                            <h3 class="card-heading">Areas of Exploration</h3>
+                            <p>EDIT: Add the technologies or concepts you are currently exploring.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-3 reveal">
+                        <article class="card-surface info-card">
+                            <h3 class="card-heading">Future Publications</h3>
+                            <p>No publications yet. Research work will be listed here when available.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== 8. ACHIEVEMENTS AND ACTIVITIES ===================== -->
+        <section id="achievements" class="section" aria-labelledby="achievements-title">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="section-index">07 / Activities</span>
+                    <h2 id="achievements-title" class="section-title">Achievements and Activities</h2>
+                    <p class="section-subtitle">Placeholder content. Replace each item with your own details.</p>
+                </header>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <article class="card-surface info-card">
+                            <i class="bi bi-laptop info-icon" aria-hidden="true"></i>
+                            <h3 class="card-heading">Technical Activities</h3>
+                            <p>EDIT: Add coding events, competitions or technical activities.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <article class="card-surface info-card">
+                            <i class="bi bi-people info-icon" aria-hidden="true"></i>
+                            <h3 class="card-heading">Club Participation</h3>
+                            <p>EDIT: Add clubs or communities you are part of.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4 reveal">
+                        <article class="card-surface info-card">
+                            <i class="bi bi-easel info-icon" aria-hidden="true"></i>
+                            <h3 class="card-heading">Workshops</h3>
+                            <p>EDIT: Add workshops or training sessions you attended.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-6 reveal">
+                        <article class="card-surface info-card">
+                            <i class="bi bi-lightning-charge info-icon" aria-hidden="true"></i>
+                            <h3 class="card-heading">Hackathons</h3>
+                            <p>EDIT: Add hackathons you took part in and your role.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-6 reveal">
+                        <article class="card-surface info-card">
+                            <i class="bi bi-award info-icon" aria-hidden="true"></i>
+                            <h3 class="card-heading">Academic Achievements</h3>
+                            <p>EDIT: Add academic recognitions, ranks or awards.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== 9. CONTACT ===================== -->
+        <section id="contact" class="section section-dark" aria-labelledby="contact-title">
+            <div class="container">
+                <header class="section-header reveal">
+                    <span class="section-index">08 / Contact</span>
+                    <h2 id="contact-title" class="section-title">Get in Touch</h2>
+                    <p class="section-subtitle">
+                        I'm open to internships and software development opportunities. Feel free to reach out.
+                    </p>
+                </header>
+
+                <div class="row g-5">
+                    <div class="col-lg-5 reveal">
+                        <ul class="contact-list">
+                            <li>
+                                <i class="bi bi-envelope" aria-hidden="true"></i>
+                                <a href="mailto:sreeragkootale@gmail.com">sreeragkootale@gmail.com</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-linkedin" aria-hidden="true"></i>
+                                <!-- EDIT: add your LinkedIn URL -->
+                                <a href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                            </li>
+                            <li>
+                                <i class="bi bi-github" aria-hidden="true"></i>
+                                <!-- EDIT: add your GitHub URL -->
+                                <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </li>
+                        </ul>
+                        <p class="contact-closing">
+                            Thank you for visiting. I'd be glad to hear about opportunities to learn,
+                            build and contribute.
+                        </p>
+                    </div>
+
+                    <div class="col-lg-7 reveal">
+                        <form id="contactForm" class="contact-form" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" name="name" autocomplete="name"
+                                        required>
+                                    <div class="invalid-feedback">Please enter your name.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        autocomplete="email" required>
+                                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <input type="text" class="form-control" id="subject" name="subject" required>
+                                    <div class="invalid-feedback">Please enter a subject.</div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5"
+                                        required></textarea>
+                                    <div class="invalid-feedback">Please enter your message.</div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-accent">
+                                        <i class="bi bi-send me-2"></i>Send Message
+                                    </button>
+                                </div>
+                                <div class="col-12">
+                                    <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+                                    <p class="form-note">
+                                        Note: this form is not yet connected to an email service, so messages are
+                                        not sent. Please use the email address above.
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <p class="mb-0">&copy; <span id="year">2026</span> Sreerag S. All rights reserved.</p>
+            <a href="#home" class="back-to-top">Back to top <i class="bi bi-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
